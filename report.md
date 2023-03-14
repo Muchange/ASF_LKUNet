@@ -7,10 +7,10 @@
 
   PConv：特征先分为两半，一半用卷积，一半直接连接，最后拼接。Backbone：PConv + （倒置残差块：Dwconv或Conv1x1）
 
-- [MedViT: A Robust Vision Transformer for Generalized Medical Image Classification（医学分类）](chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Farxiv.org%2Fpdf%2F2302.09462.pdf)
+- [MedViT: A Robust Vision Transformer for Generalized Medical Image Classification（医学分类）](https://arxiv.org/abs/2302.09462)
 
 ​		Backbone：Grouped conv 3x3，最后一层用传统vit（q，k，v：k和v做一次平均池化，把FFN换为ResNet结构（Dwconv3x3）
 
-- [RepUX-Net：Scaling Up 3D Kernels with Bayesian Frequency Re-parameterization for Medical Image Segmentation](chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Farxiv.org%2Fpdf%2F2303.05785.pdf)
+- [RepUX-Net：Scaling Up 3D Kernels with Bayesian Frequency Re-parameterization for Medical Image Segmentation](chttps://arxiv.org/abs/2303.05785)
 
   3DUX Net升级版，把卷积核升到21x21x21，在训练期间对卷积核参数加入贝叶斯权重
