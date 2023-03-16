@@ -4,10 +4,9 @@
 
 - #### 视频语义分割：
 
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr5_lrg.jpg" width="30%"  align="center"/>
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr5_lrg.jpg" width="300" height="100" />
-
-<img src="https://pic4.zhimg.com/80/v2-7054fab074486e5d343c4542b09412ff_720w.webp" alt="img" style="max-width: 40%;" align=center />
+<img src="https://pic4.zhimg.com/80/v2-7054fab074486e5d343c4542b09412ff_720w.webp"  width="40%" align="center" />
 
 - #### 2.5D网络
 
