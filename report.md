@@ -17,13 +17,13 @@
 
    从矢状面、冠状面、横断面分别切slice，然后分别训练三个2D的模型，对这三个模型结果进行融合.
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" style="max-width: 40%;" />
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" data-canonical-src="https://ars.els-cdn.com/content/image/1-s2.0-S0957417421015797-gr9_lrg.jpg" style="max-width: 40%;" />
 
 2. **输入相邻层引入层间信息**
 
    把slice的相邻层也引入网络，这样就能够利用到图像的空间信息了。对于第i层的分割，我们可以把相邻的几层（i+n到i-n）也一块作为多通道输入（类似自然图像的RGB）。 
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr4_lrg.jpg" style="max-width: 40%;" />
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr4_lrg.jpg" data-canonical-src="https://ars.els-cdn.com/content/image/1-s2.0-S0957417421015797-gr9_lrg.jpg" style="max-width: 40%;" />
 
 3.  **2D3D特征融合**
 
