@@ -17,25 +17,25 @@
 
    从矢状面、冠状面、横断面分别切slice，然后分别训练三个2D的模型，对这三个模型结果进行融合.
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" style="zoom:20%;" />
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" style="zoom:10%;" />
 
 2. **输入相邻层引入层间信息**
 
    把slice的相邻层也引入网络，这样就能够利用到图像的空间信息了。对于第i层的分割，我们可以把相邻的几层（i+n到i-n）也一块作为多通道输入（类似自然图像的RGB）。 
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr4_lrg.jpg" style="zoom:20%;" />
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr4_lrg.jpg" style="zoom:10%;" />
 
 3.  **2D3D特征融合**
 
    对2D与3D网络/模块及提取特征进行了融合，从而兼顾模型的分割效率与分割精度。
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr5_lrg.jpg" style="zoom:20%;" />
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr5_lrg.jpg" style="zoom:10%;" />
 
    **[1]** **[Liver tumor segmentation using 2.5D UV-Net with multi-scale convolution](https://www.sciencedirect.com/science/article/pii/S0010482521002183)**
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010482521002183-gr4_lrg.jpg" style="zoom:20%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010482521002183-gr4_lrg.jpg" style="zoom:10%;" />
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010482521002183-gr5_lrg.jpg" style="zoom:20%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0010482521002183-gr5_lrg.jpg" style="zoom:10%;" />
 
 
 
@@ -43,13 +43,13 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 **[2]** **[2.5D lightweight RIU-Net for automatic liver and tumor segmentation from CT](https://www.sciencedirect.com/science/article/pii/S1746809422000891)**
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S1746809422000891-gr3_lrg.jpg" style="zoom:20%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S1746809422000891-gr3_lrg.jpg" style="zoom:10%;" />
 
 相邻切片作为输入通道，经过第一个卷积把通道做处理
 
 **[3]** **[Automatic Segmentation of Vestibular Schwannoma from T2-Weighted MRI by Deep Spatial Attention with Hardness-Weighted Loss (MICCAI 2019)](https://arxiv.org/abs/1906.03906)**
 
-<img src="https://media.springernature.com/full/springer-static/image/chp%3A10.1007%2F978-3-030-32245-8_30/MediaObjects/490275_1_En_30_Fig2_HTML.png?as=webp" style="zoom:50%;" />
+<img src="https://media.springernature.com/full/springer-static/image/chp%3A10.1007%2F978-3-030-32245-8_30/MediaObjects/490275_1_En_30_Fig2_HTML.png?as=webp" style="zoom:20%;" />
 
 最开始的两个层次 (L1-L2)使用的是2D卷积，后面的三个层次 (L3-L5)使用的是3D卷积。这样做的原因在于，该任务的层面内分辨率大概是层面间分辨率的4倍，经过两个层次的2D卷积之后，层面内和层面间的分辨率就一致了，因此在之后就可以使用3D CNN进行处理。
 
@@ -57,17 +57,17 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 **[4]** **[A 2.5D Cancer Segmentation for MRI Images Based on U-Net](https://ieeexplore.ieee.org/document/8612509)**
 
-<img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/8609878/8612498/8612509/8612509-fig-2-source-large.gif" style="zoom:80%;" />
+<img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/8609878/8612498/8612509/8612509-fig-2-source-large.gif" style="zoom:50%;" />
 
 输入图像为来自三个方向(表示为1、2、3)的二维patch，在训练阶段分别输入到U-Net框架中。U网由收缩路径(左侧)和扩展路径(右侧)组成。每个灰色方框对应于一个多通道特征地图。白色方框表示复制的要素地图。在箭头上方表示不同的操作，然后对三个训练模型的分割结果进行平均，得到最终的分割结果。
 
 **[5]** **[Automatic Segmentation of Gross Target Volume of Nasopharynx Cancer using Ensemble of Multiscale Deep Neural Networks with Spatial Attention](https://www.sciencedirect.com/science/article/pii/S0925231221001077)**
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231221001077-gr2_lrg.jpg" style="zoom:20%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231221001077-gr2_lrg.jpg" style="zoom:10%;" />
 
 来自不同尺度图像训练的几个独立网络的概率映射被融合以生成初始分割结果。然后，我们选取最大的连通区域以获得最终的分割结果。
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231221001077-gr3_lrg.jpg" style="zoom:20%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231221001077-gr3_lrg.jpg" style="zoom:10%;" />
 
 骨架遵循U-Net 编码-解码器设计，一共有9个卷积块，每个卷积块包含两个卷积层，然后是BN和Leaky ReLU。除第一个卷积块外，每个卷积块前面都有一个PE块，因为第一个卷积块的输入是带一个通道的输入图像，PE块的主要目的是获取通道信息，同时考虑空间信息。注意力模块位于解码器中PE块和底部块的前面，以捕获小GTV区域的空间信息。最后一层由卷积层和提供分割概率的softmax函数组成。
 
@@ -75,13 +75,13 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 **[6]**  [**Kidney tumor segmentation from computed tomography images using DeepLabv3+ 2.5D model**](https://www.sciencedirect.com/science/article/pii/S0957417421015797)
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0957417421015797-gr9_lrg.jpg" style="zoom:25%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0957417421015797-gr9_lrg.jpg" style="zoom:10%;" />
 
 最初，堆叠在 3 个通道上的切片作为红-绿-蓝 (RGB) 图像输入。然后，它们通过编码器-解码器结构。在编码阶段，从 DPN-131 编码器中提取的特征用作空洞卷积和空洞空间金字塔池 (ASPP) 操作的输入。空洞卷积在多个尺度上捕获特征（Rate 6、Rate 12、和Rate 18)，而 ASPP 是一种池化操作，有助于计算不同尺度的对象。
 
 **[7]** **[Ψ-Net: Focusing on the border areas of intracerebral hemorrhage on CT images](https://www.sciencedirect.com/science/article/pii/S0169260719322333)**
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169260719322333-gr1_lrg.jpg" style="zoom:25%;" />
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0169260719322333-gr1_lrg.jpg" style="zoom:10%;" />
 
 
 
@@ -105,7 +105,7 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域，而且MorphFCs在水平和垂直路径上独立处理每一帧视频。以水平的(图中的蓝色块)为例。
 
-![img](https://pic1.zhimg.com/80/v2-a37eea7f64e2c1d08330a8746ce42c34_720w.webp)
+<img src="https://img-blog.csdnimg.cn/img_convert/917e4d46c226b6f7711fc95f4444456d.png" alt="img" style="zoom:25%;" />
 
 图4:空间维度上的MorphFCs。
 
@@ -121,7 +121,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 除了水平和垂直方向，本文还提出了另一个MorphFCt。MorphFCt利用简单的FC层以较低的计算成本捕获长期时间信息。如图6所示，给定一个输入视频剪辑tokensX，首先将X沿着通道维数分成若干组(每组中有D个通道)，以减少计算成本，得到Xk。
 
-![img](https://pic3.zhimg.com/80/v2-2fd1f41cdf0dfb4df1f953ffb59511d2_720w.webp)
+<img src="https://img-blog.csdnimg.cn/img_convert/74b97fb172fbfc4548cb5f1f63da8aeb.png" alt="img" style="zoom:25%;" />
 
 图6:时间维度上的MorphFCt。
 
@@ -135,7 +135,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 在MorphFCs和MorphFCt的基础上，在视频领域提出了一种分解时空的MorphMLP块，用于高效的视频表示学习。如图7所示，MorphMLP块按顺序包含了MorphFCt、MorphFCs和MLP模块。
 
-![img](https://pic3.zhimg.com/80/v2-7d88bd125ef99ea40d4462d39292c5ea_720w.webp)
+<img src="https://p6.itc.cn/q_70/images03/20220824/5aecd29cc99f48bfb8548eebb16b1830.png" alt="img" style="zoom:25%;" />
 
 图:时空MorphMLP块。
 
@@ -147,7 +147,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 在视频识别方面，如图8所示，将时空MorphMLP块进行分层叠加，构建网络。给定一个视频序列X，MorphMLP首先对视频片段进行补丁嵌入，得到一个tokens序列。然后，存在四个连续的阶段，每个阶段包含两个MorphMLP块。特征通过同一阶段内的各层时，特征大小保持不变。在每个阶段结束时，除最后一个阶段外，扩大通道维数，并按2的比例下采样特征的空间分辨率。
 
-![img](https://pic3.zhimg.com/80/v2-b00ee162cf8a6520ae9b8bc3c3a6cc66_720w.webp)
+<img src="https://img-blog.csdnimg.cn/img_convert/f1c86489e7e4719cce230e8de6ea4b09.png" alt="img" style="zoom:30%;" />
 
 图8:MorphMLP结构
 
