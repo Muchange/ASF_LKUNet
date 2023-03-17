@@ -4,9 +4,9 @@
 
 - #### 视频语义分割：
 
-<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr5_lrg.jpg" width="30%"  align="center"/>
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162142214.webp"  width="40%" align="center" />
 
-<img src="https://pic4.zhimg.com/80/v2-7054fab074486e5d343c4542b09412ff_720w.webp"  width="40%" align="center" />
+
 
 - #### 2.5D网络
 
@@ -16,7 +16,7 @@
 
    从矢状面、冠状面、横断面分别切slice，然后分别训练三个2D的模型，对这三个模型结果进行融合.
 
-   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" style="max-width: 40%;" align=center/>
+   <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0895611122000611-gr2_lrg.jpg" width="40%" align="center"/>
 
 2. **输入相邻层引入层间信息**
 
@@ -56,7 +56,7 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 **[4]** **[A 2.5D Cancer Segmentation for MRI Images Based on U-Net](https://ieeexplore.ieee.org/document/8612509)**
 
-<img src="https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/8609878/8612498/8612509/8612509-fig-2-source-large.gif" style="max-width: 40%;" align=center/>
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162142927.gif" style="max-width: 40%;" align=center/>
 
 输入图像为来自三个方向(表示为1、2、3)的二维patch，在训练阶段分别输入到U-Net框架中。U网由收缩路径(左侧)和扩展路径(右侧)组成。每个灰色方框对应于一个多通道特征地图。白色方框表示复制的要素地图。在箭头上方表示不同的操作，然后对三个训练模型的分割结果进行平均，得到最终的分割结果。
 
@@ -104,7 +104,7 @@ DR模块使用一个3D卷积，z轴没有填零操作，使用卷积核大小为
 
 MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域，而且MorphFCs在水平和垂直路径上独立处理每一帧视频。以水平的(图中的蓝色块)为例。
 
-<img src="https://img-blog.csdnimg.cn/img_convert/917e4d46c226b6f7711fc95f4444456d.png" alt="img" style="max-width: 40%;" align=center />
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162144101.png" alt="img" style="max-width: 40%;" align=center />
 
 图4:空间维度上的MorphFCs。
 
@@ -120,7 +120,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 除了水平和垂直方向，本文还提出了另一个MorphFCt。MorphFCt利用简单的FC层以较低的计算成本捕获长期时间信息。如图6所示，给定一个输入视频剪辑tokensX，首先将X沿着通道维数分成若干组(每组中有D个通道)，以减少计算成本，得到Xk。
 
-<img src="https://img-blog.csdnimg.cn/img_convert/74b97fb172fbfc4548cb5f1f63da8aeb.png" alt="img" style="max-width: 40%;" align=center />
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162144231.png" alt="img" style="max-width: 40%;" align=center />
 
 图6:时间维度上的MorphFCt。
 
@@ -134,7 +134,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 在MorphFCs和MorphFCt的基础上，在视频领域提出了一种分解时空的MorphMLP块，用于高效的视频表示学习。如图7所示，MorphMLP块按顺序包含了MorphFCt、MorphFCs和MLP模块。
 
-<img src="https://p6.itc.cn/q_70/images03/20220824/5aecd29cc99f48bfb8548eebb16b1830.png" alt="img" style="max-width: 40%;" align=center />
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162144979.png" alt="img" style="max-width: 40%;" align=center />
 
 图:时空MorphMLP块。
 
@@ -146,7 +146,7 @@ MorphFCs可以分层扩展FC的感受野，使其从小区域扩展到大区域�
 
 在视频识别方面，如图8所示，将时空MorphMLP块进行分层叠加，构建网络。给定一个视频序列X，MorphMLP首先对视频片段进行补丁嵌入，得到一个tokens序列。然后，存在四个连续的阶段，每个阶段包含两个MorphMLP块。特征通过同一阶段内的各层时，特征大小保持不变。在每个阶段结束时，除最后一个阶段外，扩大通道维数，并按2的比例下采样特征的空间分辨率。
 
-<img src="https://img-blog.csdnimg.cn/img_convert/f1c86489e7e4719cce230e8de6ea4b09.png" alt="img" style="max-width: 40%;" align=center />
+<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162144614.png" alt="img" style="max-width: 40%;" align=center />
 
 图8:MorphMLP结构
 
