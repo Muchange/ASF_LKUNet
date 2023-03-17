@@ -4,7 +4,7 @@
 
 - #### 视频语义分割：
 
-<img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162142214.webp"  width="40%" align="center" />
+<div align=center><img src="https://raw.githubusercontent.com/Muchange/Typora-Image/main/image/202303162142214.webp"  width="40%"/></div>
 
 
 
